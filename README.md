@@ -32,7 +32,7 @@ A deep Q network that trains on the mapping with reinforcement learning.
 A spiking neural network in [GeNN](https://genn-team.github.io/) available here: https://github.com/juleslcmt/spiking_arrows
 
 ## SNN PD controller
-A PD controller in Norse tracking the laser (code unavailable).
+A PD controller in [Norse](https://github.com/norse/norse) tracking the laser (in the `ccw-laser-tracking` folder).
 
 ## Dynamic neural field (DNF)
 Uses dynamic neural fields to track laser dots. Based on the paper [Learning to Look: A Dynamic Neural Fields Architecture for Gaze Shift Generation](https://link.springer.com/chapter/10.1007/978-3-319-11179-7_88) by Christian Bell, Tobias Storck & Yulia Sandamirskaya .

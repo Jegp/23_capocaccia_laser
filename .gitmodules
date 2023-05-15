@@ -4,3 +4,6 @@
 [submodule "laser"]
 	path = laser
 	url = https://github.com/ncskth/laser
+[submodule "ccw-laser-tracking"]
+	path = ccw-laser-tracking
+	url = https://github.com/lunagava/ccw-laser-tracking
