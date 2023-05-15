@@ -1,0 +1,43 @@
+import torch
+import numpy as np
+import laser
+import aestream
+import sdl
+import time
+thresh = 0.999
+nAccumulateFrames = 40
+maskSize = 20
+l = laser.Laser()
+resolution = (640,480)
+whereAmI = np.array([300,300])
+l.on()
+pixels[:] = sdl
+
+
+l.move(whereAmI[0],whereAmI[1])
+window, pixels = sdl.create_sdl_surface(*resolution)
+
+with aestream.USBInput((640,480)) as camera:
+  while True:
+    f = camera.read()
+    pixels[:] = sdl.events_to_bw(f)
+    window.refresh()
+    time.sleep(0.04)
+    #F = torch.zeros((640,480))
+    #for i in range(nAccumulateFrames):#
+      # f = camera.read()
+      # F = F + f
+    F = camera.read()
+    idxX = slice(max([1,whereAmI[0]-maskSize]),min([640,whereAmI[0] + maskSize]))
+    idxY = slice(max([1,whereAmI[1]-maskSize]),min([480,whereAmI[1] + maskSize]))
+    F[idxX,idxY] = 0
+      
+    idx = np.argmax(F)
+    print(F.max())
+    a,b = np.unravel_index(idx,F.shape)
+    xdist = whereAmI[0] -a 
+    ydist = whereAmI[1] - b
+    whereAmI[0] -=xdist
+    whereAmI[1] -=ydist
+    l.move(whereAmI[0],whereAmI[1])
+

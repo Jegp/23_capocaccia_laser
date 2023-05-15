@@ -1,0 +1,6 @@
+[submodule "spiking_arrows"]
+	path = spiking_arrows
+	url = https://github.com/juleslcmt/spiking_arrows.git
+[submodule "laser"]
+	path = laser
+	url = https://github.com/ncskth/laser
