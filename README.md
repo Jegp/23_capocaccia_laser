@@ -25,14 +25,24 @@ A proportional-integral controller that minimizes the current (and predicted) er
 ## PD-controller (learnt)
 A proportional-integral controller that tries to learn an improved mapping from camera space to laser space with gradient descent.
 
+![](pd_learnt.mp4)
+
+![](pd_learnt2.mp4)
+
 ## DQN
 A deep Q network that trains on the mapping with reinforcement learning.
 
 ## Spiking arrows (GeNN)
 A spiking neural network in [GeNN](https://genn-team.github.io/) available here: https://github.com/juleslcmt/spiking_arrows
 
+[Presentation slideshow available as a PDF](spiking_arrow_pres.pdf)
+
 ## SNN PD controller
 A PD controller in [Norse](https://github.com/norse/norse) tracking the laser (in the `ccw-laser-tracking` folder).
+
+![](ccw.mp4)
+
+![](ccw2.mp4)
 
 ## Dynamic neural field (DNF)
 Uses dynamic neural fields to track laser dots. Based on the paper [Learning to Look: A Dynamic Neural Fields Architecture for Gaze Shift Generation](https://link.springer.com/chapter/10.1007/978-3-319-11179-7_88) by Christian Bell, Tobias Storck & Yulia Sandamirskaya .
